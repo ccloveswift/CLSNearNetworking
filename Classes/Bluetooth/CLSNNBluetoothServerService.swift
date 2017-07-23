@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Cc. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import CoreBluetooth
 
 public class CLSNNBluetoothServerService: CLSNNServerNetworkNode {

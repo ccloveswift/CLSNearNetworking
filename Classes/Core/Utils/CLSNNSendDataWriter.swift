@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Cc. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public enum eCLSNNSendDataWriterState: Int {
     
