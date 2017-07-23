@@ -1,6 +1,6 @@
 //
-//  CLTNNBluetoothServerService.swift
-//  CLTNearNetworking
+//  CLSNNBluetoothServerService.swift
+//  CLSNearNetworking
 //
 //  Created by Cc on 2017/2/5.
 //  Copyright © 2017年 Cc. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreBluetooth
 
-public class CLTNNBluetoothServerService: CLTNNServerNetworkNode {
+public class CLSNNBluetoothServerService: CLSNNServerNetworkNode {
 
     fileprivate let pServiceUUID: CBUUID
     fileprivate let pCharacteristicUUID: CBUUID
@@ -22,9 +22,9 @@ public class CLTNNBluetoothServerService: CLTNNServerNetworkNode {
     fileprivate var pCharacteristicRR: CBCharacteristic? = nil
 
     /// 这个是正在发送的对象，当有值时就开始发送它，如果它为nil表示已经完成
-    fileprivate var pSendDataWriter: CLTNNSendDataWriter? = nil
+    fileprivate var pSendDataWriter: CLSNNSendDataWriter? = nil
     /// 收到的消息
-    fileprivate var pReceiveDataReader: CLTNNReceiveDataReader? = nil
+    fileprivate var pReceiveDataReader: CLSNNReceiveDataReader? = nil
     
     let kLenSize = 64
     
@@ -92,7 +92,7 @@ public class CLTNNBluetoothServerService: CLTNNServerNetworkNode {
         self.fReleaseCentralManager()
     }
     
-    override func fOnSendMsgToOther(writer: CLTNNSendDataWriter) {
+    override func fOnSendMsgToOther(writer: CLSNNSendDataWriter) {
        
         self.pSendDataWriter = writer
         self.fSendData()
@@ -176,7 +176,7 @@ public class CLTNNBluetoothServerService: CLTNNServerNetworkNode {
 }
 
 // MARK: -
-extension CLTNNBluetoothServerService: CBCentralManagerDelegate {
+extension CLSNNBluetoothServerService: CBCentralManagerDelegate {
     
     public func centralManagerDidUpdateState(_ central: CBCentralManager) {
         
@@ -232,7 +232,7 @@ extension CLTNNBluetoothServerService: CBCentralManagerDelegate {
 }
 
 // MARK: -
-extension CLTNNBluetoothServerService: CBPeripheralDelegate {
+extension CLSNNBluetoothServerService: CBPeripheralDelegate {
     
      public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         
@@ -319,7 +319,7 @@ extension CLTNNBluetoothServerService: CBPeripheralDelegate {
             
             if str == "S|" {
                 
-                self.pReceiveDataReader = CLTNNReceiveDataReader.init()
+                self.pReceiveDataReader = CLSNNReceiveDataReader.init()
             }
             else if str == "|E" {
                

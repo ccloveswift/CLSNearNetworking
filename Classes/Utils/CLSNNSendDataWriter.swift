@@ -1,6 +1,6 @@
 //
-//  CLTNNSendDataWriter.swift
-//  CLTNearNetworking
+//  CLSNNSendDataWriter.swift
+//  CLSNearNetworking
 //
 //  Created by Cc on 2017/2/5.
 //  Copyright © 2017年 Cc. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum eCLTNNSendDataWriterState: Int {
+public enum eCLSNNSendDataWriterState: Int {
     
     /// 0 = 初始化
     case eInit = 0
@@ -26,11 +26,11 @@ public enum eCLTNNSendDataWriterState: Int {
     case eSendEnd = 4
 }
 
-public class CLTNNSendDataWriter: NSObject {
+public class CLSNNSendDataWriter: NSObject {
 
     lazy var pSendDataIndex: Int = 0
     lazy var pData = NSMutableData.init()
-    lazy var pSendState:eCLTNNSendDataWriterState = .eInit
+    lazy var pSendState:eCLSNNSendDataWriterState = .eInit
     
     public func fWriteInt32(_ source: Int32) {
         

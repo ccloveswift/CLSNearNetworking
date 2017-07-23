@@ -1,6 +1,6 @@
 //
-//  CLTNNReceiveDataReader.swift
-//  CLTNearNetworking
+//  CLSNNReceiveDataReader.swift
+//  CLSNearNetworking
 //
 //  Created by Cc on 2017/2/5.
 //  Copyright © 2017年 Cc. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CLTNNReceiveDataReader: NSObject {
+public class CLSNNReceiveDataReader: NSObject {
 
     lazy var pData = NSMutableData.init()
     private lazy var pReadDataIndex: Int = 0

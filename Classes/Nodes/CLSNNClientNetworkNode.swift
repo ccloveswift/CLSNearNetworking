@@ -1,6 +1,6 @@
 //
-//  CLTNNServerNetworkNode.swift
-//  CLTNearNetworking
+//  CLSNNClientNetworkNode.swift
+//  CLSNearNetworking
 //
 //  Created by Cc on 2017/2/5.
 //  Copyright © 2017年 Cc. All rights reserved.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-public class CLTNNServerNetworkNode: CLTNNNetworkNode {
+public class CLSNNClientNetworkNode: CLSNNNetworkNode {
 
-    public func fStartListening() {
+    public func fStartConnecting() {
         // 子类实现
         assert(false)
     }
     
-    public func fStopListening() {
+    public func fStopConnecting() {
         // 子类实现
         assert(false)
     }

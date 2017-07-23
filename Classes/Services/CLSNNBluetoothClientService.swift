@@ -1,6 +1,6 @@
 //
-//  CLTNNBluetoothClientService.swift
-//  CLTNearNetworking
+//  CLSNNBluetoothClientService.swift
+//  CLSNearNetworking
 //
 //  Created by Cc on 2017/2/5.
 //  Copyright © 2017年 Cc. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreBluetooth
 
-public class CLTNNBluetoothClientService: CLTNNClientNetworkNode {
+public class CLSNNBluetoothClientService: CLSNNClientNetworkNode {
 
     fileprivate let pServiceUUID: CBUUID
     fileprivate let pCharacteristicUUID: CBUUID
@@ -20,9 +20,9 @@ public class CLTNNBluetoothClientService: CLTNNClientNetworkNode {
     fileprivate var pMutableCharacteristicRR:CBMutableCharacteristic? = nil
     
     /// 这个是正在发送的对象，当有值时就开始发送它，如果它为nil表示已经完成
-    fileprivate var pSendDataWriter: CLTNNSendDataWriter? = nil
+    fileprivate var pSendDataWriter: CLSNNSendDataWriter? = nil
     /// 收到的消息
-    fileprivate var pReceiveDataReader: CLTNNReceiveDataReader? = nil
+    fileprivate var pReceiveDataReader: CLSNNReceiveDataReader? = nil
     
     let kLenSize = 64
     
@@ -115,7 +115,7 @@ public class CLTNNBluetoothClientService: CLTNNClientNetworkNode {
         }
     }
     
-    override func fOnSendMsgToOther(writer: CLTNNSendDataWriter) {
+    override func fOnSendMsgToOther(writer: CLSNNSendDataWriter) {
         
         self.pSendDataWriter = writer
         self.fSendData()
@@ -171,7 +171,7 @@ public class CLTNNBluetoothClientService: CLTNNClientNetworkNode {
 
 
 // MARK: - 连接回调
-extension CLTNNBluetoothClientService: CBPeripheralManagerDelegate {
+extension CLSNNBluetoothClientService: CBPeripheralManagerDelegate {
     
     public func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
     
@@ -242,7 +242,7 @@ extension CLTNNBluetoothClientService: CBPeripheralManagerDelegate {
                     
                     if str == "S|" {
                         
-                        self.pReceiveDataReader = CLTNNReceiveDataReader.init()
+                        self.pReceiveDataReader = CLSNNReceiveDataReader.init()
                     }
                     else if str == "|E" {
                         
