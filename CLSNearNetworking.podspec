@@ -5,9 +5,9 @@ Pod::Spec.new do |s|
     s.summary      = "A short description of CLSNearNetworking."
     s.description  = <<-DESC
                     Cc
-                   DESC
+                        DESC
 
-    s.homepage     = "https://github.com/shutefeng/CLSNearNetworking"
+    s.homepage     = "https://github.com/ccloveswift/CLSNearNetworking"
   
     s.license      = { :type => 'Copyright', :text =>
         <<-LICENSE
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   
     s.author             = { "TT" => "654974034@qq.com" }
 
-    s.source       = { :git => "https://github.com/shutefeng/CLSNearNetworking.git", :tag => "#{s.version}" }
+    s.source       = { :git => "https://github.com/ccloveswift/CLSNearNetworking.git", :tag => "#{s.version}" }
 
     s.source_files  = "Classes", "Classes/**/*.{swift}"
   # s.exclude_files = "Classes/Exclude"
