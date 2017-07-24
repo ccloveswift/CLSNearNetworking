@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Bluetooth' do |ss|
+    ss.dependency       'CLSNearNetworking/Core'
     ss.frameworks          = "CoreBluetooth"
     ss.source_files        = "Classes/Bluetooth/**/*.{swift}"
   end
